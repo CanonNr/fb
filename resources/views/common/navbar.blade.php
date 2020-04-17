@@ -20,8 +20,8 @@
                 </li>
 
                 <li>
-                    <a href="table.html">
-                        <i class="fas fa-table"></i>Tables
+                    <a href="/admin/goods">
+                        <i class="fas fa-align-center"></i>商 品 管 理
                     </a>
                 </li>
 

@@ -25,6 +25,17 @@ $router->group(['prefix' => '/admin'], function ($router) {
             $router->get('/', 'Admin\UserController@index');
             $router->get('/address/{id}', 'Admin\UserController@address');
         });
+
+        $router->group(['prefix' => '/goods'], function ($router) {
+            $router->get('/', 'Admin\GoodsController@index');
+            $router->get('/create', 'Admin\GoodsController@create');
+            $router->post('/create/action', 'Admin\GoodsController@createAction');
+        });
+
+        $router->group(['prefix' => '/order'], function ($router) {
+            $router->get('/', 'Admin\OrderController@index');
+            $router->get('/address/{id}', 'Admin\UserController@address');
+        });
     });
 
 });
