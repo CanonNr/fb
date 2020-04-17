@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-   return view('index');
+   return view('blank');
 });
 
 $router->group(['prefix' => '/admin','middleware'=>['admin']], function ($router) {
