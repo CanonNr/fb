@@ -30,6 +30,7 @@ $router->group(['prefix' => '/admin'], function ($router) {
             $router->get('/', 'Admin\GoodsController@index');
             $router->get('/create', 'Admin\GoodsController@create');
             $router->post('/create/action', 'Admin\GoodsController@createAction');
+            $router->get('/delete/{id}', 'Admin\GoodsController@delete');
         });
 
         $router->group(['prefix' => '/order'], function ($router) {

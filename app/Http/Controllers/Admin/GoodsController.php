@@ -50,6 +50,14 @@ class GoodsController
 
     public function delete($id)
     {
-        
+        try{
+            $goods = Goods::findOrFail(123);
+            $goods->delete();
+        }catch (\Exception $exception){
+            Log::error("Goods Delete Error ".$exception->getMessage());
+            return redirect('/admin/goods?&msg=删除失败');
+        }
+
+        return redirect('/admin/goods?msg=删除成功');
     }
 }
