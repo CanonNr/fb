@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-04-17 14:27:00
+Date: 2020-04-17 15:14:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,6 +26,8 @@ CREATE TABLE `address` (
   `tel` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0不是默认,1默认',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -41,6 +43,8 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -57,6 +61,8 @@ CREATE TABLE `collects` (
   `user_id` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0未收藏,1已收藏',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -72,6 +78,8 @@ CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `content` varchar(255) NOT NULL DEFAULT '默认好评',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -90,6 +98,8 @@ CREATE TABLE `goods` (
   `category_id` int(11) DEFAULT NULL,
   `price` int(11) NOT NULL DEFAULT '0' COMMENT '单位:分',
   `cover` varchar(255) DEFAULT NULL COMMENT '封面',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -113,6 +123,8 @@ CREATE TABLE `orders` (
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0待发货,1配送中,2已送达,3已完成',
   `comment_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0未评论,1已评论',
   `freight` varchar(255) NOT NULL DEFAULT '2.0元',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -128,9 +140,14 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1', '1', '1', null, null);
+INSERT INTO `users` VALUES ('2', '2222', '2', '2020-04-17 07:08:52', '2020-04-17 07:08:52');
+INSERT INTO `users` VALUES ('3', 'admin', 'c81e728d9d4c2f636f067f89cc14862c', '2020-04-17 07:13:06', '2020-04-17 07:13:06');
