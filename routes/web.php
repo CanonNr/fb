@@ -20,8 +20,9 @@ $router->group(['prefix' => '/admin'], function ($router) {
 
     $router->group(['middleware'=>['admin']], function ($router) {
         $router->get('/', 'Admin\IndexController@index');
-        $router->get('/test', function () {
-            return 999;
+
+        $router->group(['prefix' => '/user'], function ($router) {
+            $router->get('/', 'Admin\UserController@index');
         });
     });
 
