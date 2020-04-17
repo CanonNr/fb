@@ -14,9 +14,7 @@ use Illuminate\Http\Request;
 */
 
 $router->group(['prefix' => '','middleware'=>['user']], function ($router) {
-    $router->get('/test', function () {
-        return 999;
-    });
+    $router->get('/register',"LoginController@register");
 
 
 });
