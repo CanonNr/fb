@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-   return view('blank');
-});
+$router->get('/', 'Admin\LoginController@index');
 
-$router->group(['prefix' => '/admin','middleware'=>['admin']], function ($router) {
-    $router->get('/test', function () {
-        return 999;
+$router->group(['prefix' => '/admin'], function ($router) {
+    $router->get('/login', 'Admin\LoginController@index');
+    $router->get('/login/action', 'Admin\LoginController@action');
+
+    $router->group(['middleware'=>['admin']], function ($router) {
+        $router->get('/', 'Admin\IndexController@index');
+        $router->get('/test', function () {
+            return 999;
+        });
     });
+
 });

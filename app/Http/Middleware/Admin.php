@@ -15,7 +15,9 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        echo 123;
+        if (empty(session('user'))){
+            return redirect('/admin/login');
+        }
         return $next($request);
     }
 }
