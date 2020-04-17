@@ -15,6 +15,7 @@ $router->get('/', 'Admin\LoginController@index');
 
 $router->group(['prefix' => '/admin'], function ($router) {
     $router->get('/login', 'Admin\LoginController@index');
+    $router->get('/logout', 'Admin\LoginController@logout');
     $router->get('/login/action', 'Admin\LoginController@action');
 
     $router->group(['middleware'=>['admin']], function ($router) {

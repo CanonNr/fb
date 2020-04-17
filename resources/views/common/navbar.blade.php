@@ -61,12 +61,13 @@
                             <div class="account-item clearfix js-item-menu">
 
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#">john doe</a>
+                                    <a class="js-acc-btn" href="#">{{session('user')[0]['username']}}</a>
                                 </div>
+
                                 <div class="account-dropdown js-dropdown">
                                     <div class="account-dropdown__footer">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                        <a href="/admin/logout">
+                                            <i class="zmdi zmdi-power"></i> 退 出 </a>
                                     </div>
                                 </div>
                             </div>
