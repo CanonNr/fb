@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 $router->group(['prefix' => '','middleware'=>['user']], function ($router) {
     $router->get('/register',"LoginController@register");
+    $router->get('/login',"LoginController@login");
 
 
 });

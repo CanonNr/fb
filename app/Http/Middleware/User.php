@@ -15,7 +15,6 @@ class User
      */
     public function handle($request, Closure $next)
     {
-        echo 'user'.PHP_EOL;
         return $next($request);
     }
 }
