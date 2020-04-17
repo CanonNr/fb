@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-04-17 15:14:11
+Date: 2020-04-17 18:32:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -51,6 +51,7 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
+INSERT INTO `admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', null, null);
 
 -- ----------------------------
 -- Table structure for collects
@@ -143,11 +144,11 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', '1', '1', null, null);
 INSERT INTO `users` VALUES ('2', '2222', '2', '2020-04-17 07:08:52', '2020-04-17 07:08:52');
-INSERT INTO `users` VALUES ('3', 'admin', 'c81e728d9d4c2f636f067f89cc14862c', '2020-04-17 07:13:06', '2020-04-17 07:13:06');
+INSERT INTO `users` VALUES ('5', 'baba', 'e10adc3949ba59abbe56e057f20f883e', '2020-04-17 07:39:38', '2020-04-17 07:39:38');

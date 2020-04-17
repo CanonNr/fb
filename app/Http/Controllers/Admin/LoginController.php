@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Base\ReturnTemplate as returns;
 
 class LoginController extends Controller
 {
