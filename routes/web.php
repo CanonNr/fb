@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-   echo " welcome ";
+   return view('index');
 });
 
 $router->group(['prefix' => '/admin','middleware'=>['admin']], function ($router) {
