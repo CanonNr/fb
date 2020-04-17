@@ -30,7 +30,7 @@ class LoginController extends Controller
             $request->session()->push('user', $admin);
             return redirect('/admin');
         }catch (\Exception $e){
-            return redirect('/admin/login');
+            return redirect('/admin/login?msg=账号或密码错误');
         }
     }
 

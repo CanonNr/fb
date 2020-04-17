@@ -94,6 +94,11 @@
 
 <!-- Main JS-->
 <script src="/js/main.js"></script>
+<script>
+    @if(isset($_GET['msg']) && !empty($_GET['msg']))
+        alert("{{$_GET['msg']}}")
+    @endif
+</script>
 
 </body>
 
