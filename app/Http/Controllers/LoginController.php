@@ -19,7 +19,9 @@ class LoginController extends Controller
         $data['password'] = md5($data['password']);
 
         $user = new User;
-        $user = $user->select('id','username','password')->where($data)->first();
+        $user = $user->select('id','username','password')->where($data)->first()->toArray();
+        $user['token'] = md5("clearlove7");
+
         if (empty($user)){
             return new returns(422,[],'账号或密码错误');
         }

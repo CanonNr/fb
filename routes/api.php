@@ -13,9 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-$router->group(['prefix' => '','middleware'=>['user']], function ($router) {
+$router->group(['prefix' => ''], function ($router) {
     $router->get('/register',"LoginController@register");
     $router->get('/login',"LoginController@login");
 
+    $router->group(['middleware'=>['user']], function ($router) {
 
+
+    });
 });
