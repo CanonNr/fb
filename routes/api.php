@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-$router->group(['prefix' => '','middleware'=>[]], function ($router) {
+$router->group(['prefix' => '','middleware'=>['user']], function ($router) {
     $router->get('/test', function () {
         return 999;
     });

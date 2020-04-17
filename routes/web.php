@@ -15,16 +15,8 @@ Route::get('/', function () {
    echo " welcome ";
 });
 
-$router->group(['prefix' => '/admin'], function ($router) {
+$router->group(['prefix' => '/admin','middleware'=>['admin']], function ($router) {
     $router->get('/test', function () {
         return 999;
     });
-});
-
-$router->group(['prefix' => '/api'], function ($router) {
-    $router->get('/test', function () {
-        return 999;
-    });
-
-
 });
