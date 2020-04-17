@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   echo " welcome ";
+});
+
+$router->group(['prefix' => '/admin'], function ($router) {
+    $router->get('/test', function () {
+        return 999;
+    });
+});
+
+$router->group(['prefix' => '/api'], function ($router) {
+    $router->get('/test', function () {
+        return 999;
+    });
+
+
 });
