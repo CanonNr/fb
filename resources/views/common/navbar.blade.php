@@ -15,8 +15,8 @@
                 </li>
 
                 <li>
-                    <a href="chart.html">
-                        <i class="fas fa-chart-bar"></i>Charts</a>
+                    <a href="/admin/user">
+                        <i class="fas fa-chart-bar"></i>用 户 管 理</a>
                 </li>
 
                 <li>

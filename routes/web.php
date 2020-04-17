@@ -23,6 +23,7 @@ $router->group(['prefix' => '/admin'], function ($router) {
 
         $router->group(['prefix' => '/user'], function ($router) {
             $router->get('/', 'Admin\UserController@index');
+            $router->get('/address/{id}', 'Admin\UserController@address');
         });
     });
 
