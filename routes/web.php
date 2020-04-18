@@ -28,8 +28,13 @@ $router->group(['prefix' => '/admin'], function ($router) {
 
         $router->group(['prefix' => '/goods'], function ($router) {
             $router->get('/', 'Admin\GoodsController@index');
+
             $router->get('/create', 'Admin\GoodsController@create');
             $router->post('/create/action', 'Admin\GoodsController@createAction');
+
+            $router->get('/update/{id}', 'Admin\GoodsController@update');
+            $router->post('/update/action', 'Admin\GoodsController@updateAction');
+
             $router->get('/delete/{id}', 'Admin\GoodsController@delete');
         });
 

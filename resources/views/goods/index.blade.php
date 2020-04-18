@@ -27,7 +27,7 @@
                             <td>商品名</td>
                             <td>介绍</td>
                             <td>分类</td>
-                            <td>价格</td>
+                            <td>单价</td>
                             <td>封面</td>
                             <td>操作</td>
                         </tr>
@@ -39,7 +39,7 @@
                             <td> {{$item['name']}} </td>
                             <td> {{$item['description']}} </td>
                             <td> {{category($item['category_id'])}} </td>
-                            <td> {{round($item['price'],2)}} </td>
+                            <td> ￥ {{round($item['price'],2)}}  </td>
                             <td>
                                 <img src="{{$item['cover']}}" width="50px">
                             </td>
