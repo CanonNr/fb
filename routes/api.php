@@ -29,8 +29,15 @@ $router->group(['prefix' => ''], function ($router) {
             $router->get('/collect/action/{id}/{goods_id}/{status}',"Api\GoodsController@collectAction");
 
 
+            $router->get('/cart/add/{user_id}/{goods_id}',"Api\GoodsController@addCart");
+
         });
 
+    });
+
+    $router->group(['prefix' => '/cart'], function ($router) {
+        $router->get('/list/{user_id}',"Api\CartController@list");
+        $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
     });
 
 });

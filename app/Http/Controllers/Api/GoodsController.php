@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Cart;
 use App\Collect;
 use App\Goods;
 use App\Http\Controllers\Controller;
@@ -46,5 +47,17 @@ class GoodsController extends Controller
         $collect->status = $status;
         $collect->save();
         return new returns(200,[],'收藏成功');
+    }
+
+    public function addCart($user_id,$goods_id)
+    {
+        $cart = new Cart();
+        if ($cart->where(['user_id'=>$user_id,'goods_id'=>$goods_id])->count() == 0){
+            $cart->user_id = $user_id;
+            $cart->goods_id = $goods_id;
+            $cart->save();
+        }
+
+        return new returns(200,[]);
     }
 }
