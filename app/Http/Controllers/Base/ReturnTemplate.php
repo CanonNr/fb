@@ -17,8 +17,8 @@ class ReturnTemplate
         self::$code = $code;
         self::$message = $message;
         self::$data = $data;
-        return $this;
     }
+
 
     public function __toString()
     {

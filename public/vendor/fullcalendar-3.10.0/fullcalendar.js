@@ -1977,7 +1977,7 @@ function isHitPropsWithin(subHit, superHit) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = '3.10.0';
-// When introducing internal API incompatibilities (where fullcalendar plugins would break),
+// When introducing internal Api incompatibilities (where fullcalendar plugins would break),
 // the minor version of the calendar should be upped (ex: 2.7.2 -> 2.8.0)
 // and the below integer should be incremented.
 exports.internalApiVersion = 12;
@@ -3655,7 +3655,7 @@ var InteractiveDateComponent = /** @class */ (function (_super) {
             $(ev.target).is('.fc-resizer');
     };
     // Kills all in-progress dragging.
-    // Useful for when public API methods that result in re-rendering are invoked during a drag.
+    // Useful for when public Api methods that result in re-rendering are invoked during a drag.
     // Also useful for when touch devices misbehave and don't fire their touchend.
     InteractiveDateComponent.prototype.endInteractions = function () {
         [
@@ -4093,7 +4093,7 @@ var View = /** @class */ (function (_super) {
     /* Dimensions
     ------------------------------------------------------------------------------------------------------------------*/
     View.prototype.updateSize = function (totalHeight, isAuto, isResize) {
-        if (this['setHeight']) { // for legacy API
+        if (this['setHeight']) { // for legacy Api
             this['setHeight'](totalHeight, isAuto);
         }
         else {
@@ -4154,7 +4154,7 @@ var View = /** @class */ (function (_super) {
         // a drop doesn't necessarily mean a date mutation (ex: resource change)
         (dateMutation && dateMutation.dateDelta) || moment.duration(), undoFunc, el, ev);
     };
-    // Triggers event-drop handlers that have subscribed via the API
+    // Triggers event-drop handlers that have subscribed via the Api
     View.prototype.triggerEventDrop = function (eventInstance, dateDelta, undoFunc, el, ev) {
         this.publiclyTrigger('eventDrop', {
             context: el[0],
@@ -4179,7 +4179,7 @@ var View = /** @class */ (function (_super) {
         }
         this.triggerExternalDrop(singleEventDef, isEvent, el, ev, ui);
     };
-    // Triggers external-drop handlers that have subscribed via the API
+    // Triggers external-drop handlers that have subscribed via the Api
     View.prototype.triggerExternalDrop = function (singleEventDef, isEvent, el, ev, ui) {
         // trigger 'drop' regardless of whether element represents an event
         this.publiclyTrigger('drop', {
@@ -4213,7 +4213,7 @@ var View = /** @class */ (function (_super) {
         var resizeDelta = eventMutation.dateMutation.endDelta || eventMutation.dateMutation.startDelta;
         this.triggerEventResize(eventInstance, resizeDelta, undoFunc, el, ev);
     };
-    // Triggers event-resize handlers that have subscribed via the API
+    // Triggers event-resize handlers that have subscribed via the Api
     View.prototype.triggerEventResize = function (eventInstance, resizeDelta, undoFunc, el, ev) {
         this.publiclyTrigger('eventResize', {
             context: el[0],
@@ -9360,7 +9360,7 @@ var JsonFeedEventSource = /** @class */ (function (_super) {
         var requestParams = this.buildRequestParams(start, end, timezone);
         // todo: eventually handle the promise's then,
         // don't intercept success/error
-        // tho will be a breaking API change
+        // tho will be a breaking Api change
         this.calendar.pushLoading();
         return Promise_1.default.construct(function (onResolve, onReject) {
             $.ajax($.extend({}, // destination
@@ -9982,7 +9982,7 @@ var Component = /** @class */ (function (_super) {
         this.unrenderSkeleton();
         this.unbindGlobalHandlers();
         this.el.remove();
-        // NOTE: don't null-out this.el in case the View was destroyed within an API callback.
+        // NOTE: don't null-out this.el in case the View was destroyed within an Api callback.
         // We don't null-out the View's other jQuery element references upon destroy,
         //  so we shouldn't kill this.el either.
     };
@@ -10663,7 +10663,7 @@ var Calendar = /** @class */ (function () {
         return this.hasHandlers(name) ||
             this.opt(name); // handler specified in options
     };
-    // Options Public API
+    // Options Public Api
     // -----------------------------------------------------------------------------------------------------------------
     // public getter/setter
     Calendar.prototype.option = function (name, value) {
@@ -10771,7 +10771,7 @@ var Calendar = /** @class */ (function () {
         this.currentDate.add(moment.duration(delta));
         this.renderView();
     };
-    // for external API
+    // for external Api
     Calendar.prototype.getDate = function () {
         return this.applyTimezone(this.currentDate); // infuse the calendar's timezone
     };
@@ -10796,7 +10796,7 @@ var Calendar = /** @class */ (function () {
             this.initialRender();
         }
         else if (this.elementVisible()) {
-            // mainly for the public API
+            // mainly for the public Api
             this.calcSize();
             this.updateViewSize();
         }
@@ -11129,7 +11129,7 @@ var Calendar = /** @class */ (function () {
             this.view.unselect();
         }
     };
-    // Given arguments to the select method in the API, returns a span (unzoned start/end and other info)
+    // Given arguments to the select method in the Api, returns a span (unzoned start/end and other info)
     Calendar.prototype.buildSelectFootprint = function (zonedStartInput, zonedEndInput) {
         var start = this.moment(zonedStartInput).stripZone();
         var end;
@@ -11379,7 +11379,7 @@ var Calendar = /** @class */ (function () {
         }
         return end;
     };
-    // Public Events API
+    // Public Events Api
     // -----------------------------------------------------------------------------------------------------------------
     Calendar.prototype.rerenderEvents = function () {
         this.view.flash('displayingEvents');
@@ -11456,7 +11456,7 @@ var Calendar = /** @class */ (function () {
             this.eventManager.mutateEventsWithId(eventDef.id, eventDefMutation); // will release
         }
     };
-    // Public Event Sources API
+    // Public Event Sources Api
     // ------------------------------------------------------------------------------------
     Calendar.prototype.getEventSources = function () {
         return this.eventManager.otherSources.slice(); // clone
