@@ -14,11 +14,17 @@ use Illuminate\Http\Request;
 */
 
 $router->group(['prefix' => ''], function ($router) {
-    $router->match(['get', 'put'],'/register',"Api\LoginController@register");
-    $router->match(['get', 'put'],'/login',"Api\LoginController@login");
+    $router->get('/register',"Api\LoginController@register");
+    $router->get('/login',"Api\LoginController@login");
 
     $router->group(['middleware'=>['user']], function ($router) {
+        $router->group(['prefix' => '/goods'], function ($router) {
+            $router->get('/list/{id}',"Api\GoodsController@list");
+            $router->get('/search/{name}',"Api\GoodsController@search");
+            $router->get('/get/{id}',"Api\GoodsController@get");
 
+        });
 
     });
+
 });
