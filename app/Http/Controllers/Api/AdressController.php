@@ -34,4 +34,10 @@ class AdressController
        $address->save();
        return new returns(200,$address);
     }
+
+    public function getDefault($id)
+    {
+        $address = Address::where('user_id',$id)->where('is_default','true')->first();
+        return new returns(200,$address);
+    }
 }
