@@ -42,7 +42,9 @@ $router->group(['prefix' => '/admin','middleware'=>['orderStatus']], function ($
 
         $router->group(['prefix' => '/order'], function ($router) {
             $router->get('/', 'Admin\OrderController@index');
-            $router->get('/address/{id}', 'Admin\UserController@address');
+            $router->get('/fh/{id}', 'Admin\OrderController@fh');
+            $router->get('/sd/{id}', 'Admin\OrderController@sd');
+
         });
     });
 

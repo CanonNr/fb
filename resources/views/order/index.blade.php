@@ -43,6 +43,8 @@
                             <td>
                                 @if($item['status'] == \App\Order::未发货)
                                     <a type="button" class="btn btn-outline-danger" href="/admin/order/fh/{{$item['id']}}">发货</a>
+                                @elseif($item['status'] == \App\Order::配送中)
+                                    <a type="button" class="btn btn-outline-primary" href="/admin/order/sd/{{$item['id']}}">已送达</a>
                                 @endif
                             </td>
                         </tr>

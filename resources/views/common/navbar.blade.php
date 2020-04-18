@@ -30,19 +30,6 @@
                         <i class="far fa-check-square"></i> 订 单 管 理
                     </a>
                 </li>
-
-                <li>
-                    <a href="calendar.html">
-                        <i class="fas fa-calendar-alt"></i>Calendar
-                    </a>
-                </li>
-
-                <li>
-                    <a href="map.html">
-                        <i class="fas fa-map-marker-alt"></i>Maps
-                    </a>
-                </li>
-
             </ul>
         </nav>
     </div>
