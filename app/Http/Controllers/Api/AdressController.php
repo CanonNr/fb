@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 
 class AdressController
 {
+    public function get($id)
+    {
+        $address = Address::where('user_id',$id)->get();
+        return new returns(200,$address);
+    }
+
+
     public function add(Request $request)
     {
        $data = $request->all('name','tel','isDefault','address','label','user_id');

@@ -41,6 +41,7 @@ $router->group(['prefix' => ''], function ($router) {
     });
 
     $router->group(['prefix' => '/address'], function ($router) {
+        $router->get('/get/{id}',"Api\AdressController@get");
         $router->get('/add',"Api\AdressController@add");
         $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
     });
