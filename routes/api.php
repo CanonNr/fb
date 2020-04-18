@@ -22,6 +22,12 @@ $router->group(['prefix' => ''], function ($router) {
             $router->get('/list/{id}',"Api\GoodsController@list");
             $router->get('/search/{name}',"Api\GoodsController@search");
             $router->get('/get/{id}',"Api\GoodsController@get");
+            $router->get('/get/{id}',"Api\GoodsController@get");
+
+
+            $router->get('/collect/{user_id}/{goods_id}',"Api\GoodsController@collect");
+            $router->get('/collect/action/{id}/{goods_id}/{status}',"Api\GoodsController@collectAction");
+
 
         });
 
