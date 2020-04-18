@@ -11,7 +11,7 @@ class CollectController
 {
     public function list($id)
     {
-        $list = Collect::where('user_id',$id)->with('goods')->has('goods')->groupBy('goods_id')->get();
+        $list = Collect::where('user_id',$id)->where('status','true')->with('goods')->has('goods')->groupBy('goods_id')->get();
         return new returns(200,$list);
     }
 

@@ -42,10 +42,19 @@ class GoodsController extends Controller
     public function collectAction($user_id,$goods_id,$status)
     {
         $collect = new Collect;
-        $collect->user_id = $user_id;
-        $collect->goods_id = $goods_id;
-        $collect->status = $status;
-        $collect->save();
+        $collect = $collect->where("user_id",$user_id)->where("goods_id",$goods_id)->first();
+        if (empty($collect)){
+            $add = new Collect;
+            $add->user_id = $user_id;
+            $add->goods_id = $goods_id;
+            $add->status = $status;
+            $add->save();
+        }else{
+            $collect = $collect->first();
+            $collect->status = $status;
+            $collect->save();
+        }
+
         return new returns(200,[],'收藏成功');
     }
 
