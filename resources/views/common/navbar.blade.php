@@ -1,4 +1,4 @@
-<aside class="menu-sidebar d-none d-lg-block">
++<aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <h3>
             Five Buy 管理后台
@@ -16,18 +16,18 @@
 
                 <li>
                     <a href="/admin/user">
-                        <i class="fas fa-chart-bar"></i>用 户 管 理</a>
+                        <i class="fas fa-chart-bar"></i> 用 户 管 理</a>
                 </li>
 
                 <li>
                     <a href="/admin/goods">
-                        <i class="fas fa-align-center"></i>商 品 管 理
+                        <i class="fas fa-align-center"></i> 商 品 管 理
                     </a>
                 </li>
 
                 <li>
-                    <a href="form.html">
-                        <i class="far fa-check-square"></i>Forms
+                    <a href="/admin/order">
+                        <i class="far fa-check-square"></i> 订 单 管 理
                     </a>
                 </li>
 
