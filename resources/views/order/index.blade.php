@@ -40,7 +40,11 @@
                             <td> {{$item['address']}} </td>
                             <td> {{$item['tel']}} </td>
                             <td> {{ getOrderStatus($item['status']) }} </td>
-
+                            <td>
+                                @if($item['status'] == \App\Order::未发货)
+                                    <a type="button" class="btn btn-outline-danger" href="/admin/order/fh/{{$item['id']}}">发货</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>

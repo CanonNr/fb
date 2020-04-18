@@ -11,9 +11,11 @@
 |
 */
 
-$router->get('/', 'Admin\LoginController@index');
+$router->get('/', function (){
+    echo "Five Buy";
+});
 
-$router->group(['prefix' => '/admin'], function ($router) {
+$router->group(['prefix' => '/admin','middleware'=>['orderStatus']], function ($router) {
     $router->get('/login', 'Admin\LoginController@index');
     $router->get('/logout', 'Admin\LoginController@logout');
     $router->get('/login/action', 'Admin\LoginController@action');

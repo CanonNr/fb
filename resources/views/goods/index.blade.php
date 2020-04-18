@@ -44,8 +44,8 @@
                                 <img src="{{$item['cover']}}" width="50px">
                             </td>
                             <td>
-                                <a type="button" class="btn btn-outline-success" href="/admin/goods/delete/{{$item['id']}}">删除</a>
                                 <a type="button" class="btn btn-outline-danger" href="/admin/goods/update/{{$item['id']}}">修改</a>
+                                <a type="button" class="btn btn-outline-success" href="/admin/goods/delete/{{$item['id']}}">删除</a>
                             </td>
                         </tr>
                         @endforeach

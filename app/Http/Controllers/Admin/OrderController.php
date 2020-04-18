@@ -11,4 +11,9 @@ class OrderController
         $orders = Order::with(['user','goods'])->has('user')->has('goods')->get();
         return view('order/index',['orders'=>$orders]);
     }
+
+    public function fh($id)
+    {
+
+    }
 }
