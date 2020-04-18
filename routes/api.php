@@ -40,4 +40,9 @@ $router->group(['prefix' => ''], function ($router) {
         $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
     });
 
+    $router->group(['prefix' => '/address'], function ($router) {
+        $router->get('/add',"Api\AdressController@add");
+        $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
+    });
+
 });
