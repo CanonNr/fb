@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Cart;
 use App\Collect;
+use App\Comment;
 use App\Goods;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Base\ReturnTemplate as returns;
@@ -68,5 +69,12 @@ class GoodsController extends Controller
         }
 
         return new returns(200,[]);
+    }
+
+    public function getComment($id)
+    {
+        $comment = Comment::where('goods_id',$id)->with('user')->has('user')->get();
+
+        return new returns(200,$comment);
     }
 }
