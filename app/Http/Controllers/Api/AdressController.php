@@ -20,8 +20,8 @@ class AdressController
     public function add(Request $request)
     {
        $data = $request->all('name','tel','isDefault','address','label','user_id');
-       if ($data['isDefault'] == 'true'){
-           $a = Address::where('user_id',$data['user_id'])->where('is_default','true')->first();
+       $a = Address::where('user_id',$data['user_id'])->where('is_default','true')->first();
+       if ($data['isDefault'] == 'true' && !empty($a)){
            $a->is_default = 'false';
            $a->save();
        }

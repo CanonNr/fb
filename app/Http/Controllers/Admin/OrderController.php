@@ -17,6 +17,7 @@ class OrderController
         try{
             $orders = Order::findOrFail($id);
             $orders->status = Order::配送中;
+            $orders->time = time();
             $orders->save();
         }catch (\Exception $exception){
 
@@ -30,6 +31,7 @@ class OrderController
         try{
             $orders = Order::findOrFail($id);
             $orders->status = Order::已送达;
+            $orders->time = time();
             $orders->save();
         }catch (\Exception $exception){
 

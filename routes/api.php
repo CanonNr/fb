@@ -32,27 +32,26 @@ $router->group(['prefix' => ''], function ($router) {
             $router->get('/comment/get/{goods_id}','Api\GoodsController@getComment');
         });
 
-    });
+        $router->group(['prefix' => '/cart'], function ($router) {
+            $router->get('/list/{user_id}',"Api\CartController@list");
+            $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
+        });
 
-    $router->group(['prefix' => '/cart'], function ($router) {
-        $router->get('/list/{user_id}',"Api\CartController@list");
-        $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
-    });
+        $router->group(['prefix' => '/address'], function ($router) {
+            $router->get('/get/{id}',"Api\AdressController@get");
+            $router->get('/add',"Api\AdressController@add");
+            $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
+            $router->get('/get/default/{user_id}', 'Api\AdressController@getDefault');
+        });
 
-    $router->group(['prefix' => '/address'], function ($router) {
-        $router->get('/get/{id}',"Api\AdressController@get");
-        $router->get('/add',"Api\AdressController@add");
-        $router->get('/delete/{user_id}/{goods_id}',"Api\CartController@delete");
-        $router->get('/get/default/{user_id}', 'Api\AdressController@getDefault');
-    });
+        $router->group(['prefix' => '/collect'], function ($router) {
+            $router->get('/list/{id}',"Api\CollectController@list");
+        });
 
-    $router->group(['prefix' => '/collect'], function ($router) {
-        $router->get('/list/{id}',"Api\CollectController@list");
-    });
-
-    $router->group(['prefix' => '/order'], function ($router) {
-        $router->get('/add',"Api\OrderController@add");
-        $router->get('/get/{user_id}/{status}',"Api\OrderController@get");
-        $router->post('/comment',"Api\OrderController@comment");
+        $router->group(['prefix' => '/order'], function ($router) {
+            $router->get('/add',"Api\OrderController@add");
+            $router->get('/get/{user_id}/{status}',"Api\OrderController@get");
+            $router->post('/comment',"Api\OrderController@comment");
+        });
     });
 });
