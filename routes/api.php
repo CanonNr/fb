@@ -54,5 +54,6 @@ $router->group(['prefix' => ''], function ($router) {
     $router->group(['prefix' => '/order'], function ($router) {
         $router->get('/add',"Api\OrderController@add");
         $router->get('/get/{user_id}/{status}',"Api\OrderController@get");
+        $router->post('/comment',"Api\OrderController@comment");
     });
 });
