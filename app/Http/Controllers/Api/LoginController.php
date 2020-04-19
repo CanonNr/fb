@@ -22,12 +22,14 @@ class LoginController extends Controller
             $data['password'] = md5($data['password']);
 
             $user = new User;
-            $user = $user->select('id', 'username', 'password')->where($data)->first()->toArray();
-            $user['token'] = md5("clearlove7");
+            $user = $user->select('id', 'username', 'password')->where($data)->first();
+
 
             if (empty($user)) {
                 return new returns(422, [], '账号或密码错误');
             }
+
+            $user->token = md5("clearlove7");
 
             return new returns(200, $user, '登录成功');
 

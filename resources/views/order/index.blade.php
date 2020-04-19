@@ -20,7 +20,7 @@
                             <td>订单号</td>
                             <td>商品名</td>
                             <td>用户名</td>
-                            <td>单价</td>
+                            <td>总价</td>
                             <td>收货人</td>
                             <td>收货地址</td>
                             <td>联系方式</td>
@@ -35,7 +35,7 @@
                             <td> {{$item['order_id']}} </td>
                             <td> {{$item['goods']['name']}} </td>
                             <td> {{$item['user']['username']}} </td>
-                            <td> ￥ {{$item['goods']['price']}} </td>
+                            <td> ￥ {{$item['total']}} </td>
                             <td> {{$item['name']}} </td>
                             <td> {{$item['address']}} </td>
                             <td> {{$item['tel']}} </td>

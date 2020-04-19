@@ -23,7 +23,7 @@ class User
         }
 
         {
-            $orders = Order::whereIn('status',[0,1,2])->get();
+            $orders = Order::whereIn('status',[0,1])->get();
             foreach ($orders as $key=>$value){
                 if((time() - $value->time) > 1800){
 
