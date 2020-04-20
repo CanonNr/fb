@@ -51,7 +51,7 @@ class GoodsController extends Controller
             $add->status = $status;
             $add->save();
         }else{
-            $collect = $collect->first();
+
             $collect->status = $status;
             $collect->save();
         }
