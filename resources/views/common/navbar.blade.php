@@ -9,7 +9,7 @@
             <ul class="list-unstyled navbar__list">
 
                 <li class="active has-sub">
-                    <a class="js-arrow" href="/">
+                    <a class="js-arrow" href="/admin">
                         <i class="fas fa-tachometer-alt"></i> 首 页
                     </a>
                 </li>

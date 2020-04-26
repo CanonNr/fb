@@ -2,7 +2,7 @@
 
 <!-- MAIN CONTENT-->
 <div class="main-content">
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="main" style="width: 800px;height:400px;margin-left: 30px"></div>
 </div>
 <script src="/js/echarts.min.js"></script>
 <script>
@@ -12,7 +12,7 @@
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: "<?php echo date('Y-m',time())?>"+'销量柱状图'
+            text: "<?php echo date('Y-m',time())?>"+'  销量统计'
         },
         tooltip: {},
         legend: {
