@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Comment;
+use App\Goods;
 use App\Http\Controllers\Base\ReturnTemplate as returns;
 use App\Order;
 use Illuminate\Http\Request;
@@ -15,14 +16,34 @@ class OrderController
     public function add(Request $request)
     {
         $data = $request->all('freight','total','user_id','name','tel','address','order_name','goods_id','all_goods');
-        $order = new Order();
-        $order->order_id = '15'.rand(10000000,99999999);
-        $order->time = time();
-        foreach ($data as $key=>$item){
-            $order->$key = $item;
+        $all_goods = explode('-',$data['all_goods']);
+        $order_id = '15'.rand(10000000,99999999);
+        $time = time();
+        foreach ($all_goods as $goods_id){
+            try{
+                $order = new Order();
+                $goods = Goods::findOrFail($goods_id);
+                $order->order_id = $order_id;
+                $order->time = $time;
+                $order->freight = $data['freight'];
+                $order->total = $data['total'];
+                $order->user_id = $data['user_id'];
+                $order->name = $data['name'];
+                $order->tel = $data['tel'];
+                $order->address = $data['address'];
+                $order->order_name = $goods->name;
+                $order->goods_id = $goods_id;
+                $order->all_goods = $data['all_goods'];
+                $order->price = $goods->price;
+
+                $order->save();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
         }
-        $order->save();
-        return new returns(200,$order, '下单成功');
+
+        return new returns(200,[], '下单成功');
     }
 
     public function get($user_id,$status)
