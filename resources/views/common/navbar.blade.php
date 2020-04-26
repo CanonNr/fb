@@ -18,7 +18,11 @@
                     <a href="/admin/user">
                         <i class="fas fa-chart-bar"></i> 用 户 管 理</a>
                 </li>
-
+                <li>
+                    <a href="/admin/category">
+                        <i class="far fa-check-square"></i> 商 品 分 类
+                    </a>
+                </li>
                 <li>
                     <a href="/admin/goods">
                         <i class="fas fa-align-center"></i> 商 品 管 理

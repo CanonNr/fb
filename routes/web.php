@@ -46,6 +46,12 @@ $router->group(['prefix' => '/admin','middleware'=>['orderStatus']], function ($
             $router->get('/sd/{id}', 'Admin\OrderController@sd');
 
         });
+
+        $router->group(['prefix' => '/category'], function ($router) {
+            $router->get('/', 'Admin\CategoryController@index');
+            $router->get('/c/{id}', 'Admin\CategoryController@c');
+
+        });
     });
 
 });
