@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Categories;
+use App\GoodsCount;
 
 class CategoryController
 {
@@ -18,7 +19,14 @@ class CategoryController
      */
     public function c($id)
     {
-        $data = [];
-        return view('category/c',['data'=>$data]);
+        $goods = [];
+        $total = [];
+        $order_count = GoodsCount::select('*',\DB::raw('count(*) as total'))->where('time',date('Y-m',time()))->where('category_id',$id)->with('goods')->has('goods')->groupBy('goods_id')->get()->toArray();
+
+        foreach ($order_count as $item){
+            $goods[] = $item['goods']['name'];
+            $total[] = $item['total'];
+        }
+        return view('category/c',['goods'=>$goods,'total'=>$total]);
     }
 }

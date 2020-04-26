@@ -7,7 +7,7 @@
 
             <div class="user-data m-b-30">
                 <h3 class="title-3 m-b-30">
-                    <i class="zmdi zmdi-account-calendar"></i> 商 品 分 类 </h3>
+                    <i class="zmdi zmdi-account-calendar"></i> 销 售 统 计 </h3>
                 <div class="filters m-b-45">
                     <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
                     </div>

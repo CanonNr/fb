@@ -16,11 +16,11 @@
 
                 <li>
                     <a href="/admin/user">
-                        <i class="fas fa-chart-bar"></i> 用 户 管 理</a>
+                        <i class="fas  fa-users"></i> 用 户 管 理</a>
                 </li>
                 <li>
                     <a href="/admin/category">
-                        <i class="far fa-check-square"></i> 商 品 分 类
+                        <i class="far fa-chart-bar"></i> 销 量 统 计
                     </a>
                 </li>
                 <li>
