@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Comment;
 use App\Goods;
+use App\GoodsCount;
 use App\Http\Controllers\Base\ReturnTemplate as returns;
 use App\Order;
 use Illuminate\Http\Request;
@@ -17,12 +18,29 @@ class OrderController
     {
         $data = $request->all('freight','total','user_id','name','tel','address','order_name','goods_id','all_goods');
         $order = new Order();
+        $time = time();
         $order->order_id = '15'.rand(10000000,99999999);
-        $order->time = time();
+        $order->time = $time;
         foreach ($data as $key=>$item){
             $order->$key = $item;
         }
         $order->save();
+
+        // 统计
+        $all_goods = explode('-',$data['all_goods']);
+
+        foreach ($all_goods as $goods_id){
+            try{
+                $goods = Goods::findOrFail($goods_id);
+                $goodsCount = new GoodsCount();
+                $goodsCount->goods_id = $goods_id;
+                $goodsCount->category_id = $goods->category_id;
+                $goodsCount->time = date("Y-m",$time);
+                $goodsCount->save();
+            }catch (\Exception $e){
+            }
+        }
+
         return new returns(200,$order, '下单成功');
     }
 
